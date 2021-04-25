@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.back {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.button-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button {
+    background-color: purple;
+}
+
+.confirmation-buttons {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.confirmation-header{
+    margin-bottom: 20px;
+}
+
+.contents{
+    margin: auto 5%;
+}
+
+.content-body {
+    display: grid;
+    grid-template-columns: 1fr 90px;
+    gap: 2px;
+}
+
+.content-group {
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.content-group:nth-child(odd){
+    background-color: rgb(238, 236, 236);
+}
+
+.content-group:nth-child(odd) > .content-title > .icons > a > div > i {
+    color: rgb(68, 63, 63);
+}
+
+.content-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.date-text {
+    text-align: right;
+    font-size: medium;
+    color: rgb(141, 140, 140);
+    font-weight: normal;
+}
+
+.expanded-content {
+    margin-top: 30px;
+}
+
+.icons {
+    margin: auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+}
+
+.icons > a > div > i {
+    color: rgb(141, 140, 140);
+}
+
+.inner-content {
+    width: 90%;
+    font-weight: 600;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.links {
+    margin: auto 5%;
+    position: relative;
+    width: 150px;
+}
+
+.links:hover .link-contents{
+    display: block;
+}
+
+.link-contents {
+    background-color: #fff;
+    border-radius: 7px;
+    width: 100%;
+    position: absolute;
+    display: none;
+}
+
+.link-contents > a {
+    text-align: center;
+    display: block;
+    padding: 2.5px 0;
+}
+
+.nav {
+    background-color: #e3f2fc;
+    height: 100px;
+    justify-content: space-between;
+}
+
+.no-content {
+    color: gray;
+    font-style: italic;
+    font-size: x-large;
+}
+
+.no-content-div { 
+    margin-top: 20px;
+    text-align: center;
+}
+
+.One{
+    position: relative;
+}
+
+.read-more {
+    height: 30px;
+    text-align: right;
+}
+
+.two{
+    width: 400px;
+    padding: 40px 20px;
+    left: 50%;
+    top: 50%;
+    margin-top: -200px;
+    margin-left: -200px;
+    position: absolute;
+    background-color: rgba(26, 24, 24, 0.9);
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+}
+
+.two-main{
+    display: none;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+@media screen and (max-width: 680px){
+}

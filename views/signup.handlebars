@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="card">
+        {{#if errors}}
+            <div class="validation-message alert alert-danger">
+                {{errors}}
+            </div>
+        {{/if}}
+        <h3 class="signup-header">
+            Sign up to your account
+        </h3>
+        <form action="/my.diary.com/signup" method="post">
+            <div class="details">
+                <input class = "input" 
+                name="email" 
+                placeholder="Email" 
+                type="email" 
+                required
+                value = {{#if errors}} {{email}} {{else}} "" {{/if}} >
+            </div>
+            <div class="details">
+                <input class = "input" 
+                name="password" 
+                placeholder="Password" 
+                type="text" 
+                required
+                value = {{#if errors}} {{password}} {{else}} "" {{/if}}>
+            </div>  
+            <span class="register">
+                <input value="Register" class="register-btn btn btn-primary" type="submit" />
+            </span>
+        </form>
+        <div class="footer">
+            Already Have An Account? <a href="http://localhost:3000/my.diary.com/signin">Sign In</a> 
+        </div>
+    </div>
+</div>

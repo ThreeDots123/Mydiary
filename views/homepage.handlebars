@@ -1,0 +1,98 @@
+<div class="One">
+    <div class="nav">
+        <div class="contents">
+            <h3>My Journal</h3>
+        </div>
+        <div class="links">
+            <div style="width: 100%; border: 1px black solid;" class="btn btn-outline">
+                My Actions    
+            </div>
+            <div class="link-contents">
+                <a href="/my.diary.com/stories/compose">
+                    <div style="width : 100%; border : none;" class="btn btn-outline-dark">
+                        <h6>Create Story</h6>
+                    </div>
+                </a>
+                <a href="/my.diary.com/logout">
+                    <div style="width : 100%; border : none;" class="btn btn-outline-dark">
+                        <h6>Log Out</h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    {{#if success_msg}}
+        <div class="alert alert-success">{{success_msg}}</div>
+    {{/if}}
+    <div class="container">
+        <div class="expanded-content">
+            {{#if stories}}
+                {{#each stories}}
+                    {{#with this}}
+                        <div class="content-group">
+                            <div class="content-title">
+                                <h3 class="inner-content">{{title}}</h3>
+                                <div class="icons">
+                                    <a href="/my.diary.com/stories/compose/editSection{{_id}}">
+                                        <div>
+                                            <i class="material-icons">edit</i>
+                                        </div>
+                                    </a>
+                                    <span valueId = {{_id}} class="delete" style="cursor: pointer;">
+                                        <div>
+                                            <i class="material-icons">delete</i>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="date">
+                                <p class="date-text">{{date}}</p>
+                            </div>
+                            <div class="content-body">
+                                <p class="inner-content-body text-truncate">{{body}}</p>
+                                <a class="read-more" href= "/my.diary.com/stories/compose/expandedSection{{_id}}">Read More</a>
+                            </div>
+                        </div>
+                    {{/with}}
+                {{/each}}
+            {{else}}
+                <div class="optional">
+                    <div class="no-content-div">
+                        <p class="no-content">No Story Has Been Created</p>
+                    </div>
+                    <div class="button-link">
+                        <a href="/my.diary.com/stories/compose">
+                            <div style="padding-left: 30px;
+                            padding-right : 30px" class="button btn btn-primary">
+                                Create Story
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</div>
+<div class="two-main">
+    <div class="two">
+        <div class="group">
+            <h3 class="confirmation-header">Are You Sure You Want To Permanently Delete This Story?</h3>
+            <p style="font-size: large;">You Can't Undo This Action</p>
+        </div>
+        <div class="confirmation-buttons">
+            <div class="cancel">
+                <div style="padding-left: 50px;
+                    padding-right : 50px" class="button btn btn-secondary">
+                        Cancel
+                </div>
+            </div>
+            <div class="delete-confirmed">
+                <form class="delete-form" action="", method="POST">
+                    <input type="hidden" name="_request" value="DELETE">
+                    <input type="submit" style="padding-left: 50px;
+                    padding-right : 50px" class="button btn btn-danger" value="Delete">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

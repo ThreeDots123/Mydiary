@@ -1,0 +1,48 @@
+{{#with story}}
+    <div class="nav">
+        <div class="contents">
+            <h3>My Journal</h3>
+        </div>
+        <div class="links">
+            <a href="/my.diary.com/">
+            <div style="padding-left: 30px;
+            padding-right : 30px"  class="button btn btn-outline-dark">
+                Home
+            </div>
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Compose</h1>
+        </div>
+        {{#if error}}
+            <div style="text-align: center;" class="alert alert-danger">"Input All Fields"</div>
+        {{/if}}
+        <!-- Diary Title -->
+        <form action="/my.diary.com/stories/compose/editSection{{_id}}?_request=PUT", method="POST">
+            <input type="hidden" name="_request" value="PUT">
+            <div class="title">
+                <h5 class="label">Title</h5>
+                <div class="details">
+                    <input class = "input" placeholder="Input Title" 
+                    type="text"
+                    name = "title"
+                    value="{{title}}">
+                </div>
+            </div>
+            <div class="post">
+                <h5 class="label">Post</h5>
+                <textarea name="body" 
+                rows="7">{{body}}</textarea>
+                <div class="message-text-story">
+                    <p>Story Should Be At Least 200 Characters Long..</p>
+                </div>
+            </div>
+            <span class = "publish">
+                <input style="padding-left: 20px;
+                padding-right: 20px;" class="btn btn-primary" value="Edit" type="submit" />
+            </span>
+        </form>
+    </div>
+{{/with}}

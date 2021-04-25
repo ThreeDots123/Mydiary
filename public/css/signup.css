@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.card{
+    margin: 10% 0;
+    padding: 50px 0 0 0;
+    border: none;
+}
+
+.details {
+    height: 40px;
+    border: 1px solid black;
+    margin: 0 5%;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.footer{
+    background-color: #d5d1d1;
+    line-height: 50px;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.input {
+    margin: 5px 0 0 10px;
+    width: 96%;
+    height: 30px;
+    border: none;
+}
+
+input:focus{
+    outline-style: none;
+    border: none;
+    box-shadow: none;
+}
+
+.register{
+    margin: 15px 5%;
+    display: block;
+    cursor: pointer;
+}
+
+.register-btn {
+    width: 100%;
+}
+
+.signup-header{
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.validation-message {
+    text-align: center;
+    margin: 15px 5%;
+}
+
+@media screen and (min-width : 680px) {
+    .card:not(:last-child){
+        margin: 10% 20%;
+        padding: 50px 0 0 30px;
+    }
+    .details{
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+    .register{
+        margin: 10px 20%;
+    }
+    .validation-message {
+        margin: 10px 20%;
+    }
+}

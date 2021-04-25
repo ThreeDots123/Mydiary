@@ -1,0 +1,46 @@
+<div class="nav">
+        <div class="contents">
+            <h3>My Journal</h3>
+        </div>
+        <div class="links">
+            <a href="/my.diary.com/">
+            <div style="padding-left: 30px;
+            padding-right : 30px"  class="button btn btn-outline-dark">
+                Home
+            </div>
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Compose</h1>
+        </div>
+        {{#if error}}
+            <div style="text-align: center;" class="alert alert-danger">{{error}}</div>
+        {{/if}}
+        <!-- Diary Title -->
+        <form action="/my.diary.com/stories/compose/myStory", method="POST">
+            <div class="title">
+                <h5 class="label">Title</h5>
+                <div class="details">
+                    <input class = "input" placeholder="Input Title" 
+                    type="text"
+                    name = "title",
+                    required
+                    value = {{#if error}} {{title}} {{else}} ""{{/if}} >
+                </div>
+            </div>
+            <div class="post">
+                <h5 class="label">Post</h5>
+                <textarea name="body"
+                placeholder="Input Post Should Be Greater Than 200 Characters"
+                rows="7">{{#if error}}{{body}} {{else}}{{/if}}</textarea>
+                <div class="message-text-story">
+                    <p>Story Should Be At Least 200 Characters Long..</p>
+                </div>
+            </div>
+            <span class = "publish">
+                <input class="btn btn-primary" value="Publish" type="submit" />
+            </span>
+        </form>
+    </div>

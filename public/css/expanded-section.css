@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.add-btn {
+    height: 50px;
+    width: 50px;
+}
+
+.back {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.button{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.button-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.confirmation-buttons {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.confirmation-header{
+    margin-bottom: 20px;
+}
+
+.contents{
+    margin: auto 5%;
+}
+
+.expanded-content {
+    margin-top: 30px;
+}
+
+.inner-content {
+    text-align: center;
+    font-weight: 600;
+}
+
+.inner-content-body {
+    line-height: 1.8;
+    word-spacing: 2px;
+    word-break: break-all;
+}
+
+.links {
+    margin: auto 5%;
+    display: flex;
+    justify-content: space-between;
+    width: 60px;
+}
+
+.material-icons{
+    color: black;
+    width: 25px;
+    font-weight: 600;
+    padding: 5px 0 0 0;
+}
+
+.nav {
+    background-color: #e3f2fc;
+    height: 100px;
+    justify-content: space-between;
+}
+
+.two{
+    width: 400px;
+    padding: 40px 20px;
+    left: 50%;
+    top: 50%;
+    margin-top: -200px;
+    margin-left: -200px;
+    position: absolute;
+    background-color: rgba(26, 24, 24, 0.9);
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+}
+
+.two-main{
+    display: none;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

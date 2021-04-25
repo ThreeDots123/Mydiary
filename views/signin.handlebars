@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="card">
+        <h4 class="signup-header">
+            Welcome! Sign in to continue
+        </h4>
+        {{#if errors}}
+            <div class="validation-message alert alert-danger">
+                {{errors}}
+            </div>
+        {{/if}}
+        <form action="/my.diary.com/signin" method="POST">
+            <div class="details">
+                <input class = "input" 
+                placeholder="Email" 
+                type="email"
+                name = "email" 
+                required
+                value={{#if errors}} {{email}} {{else}} "" {{/if}}>
+            </div>
+            <div class="details">
+                <input class = "input" 
+                placeholder="Password" 
+                type="password"
+                name = "password"
+                required
+                value= {{#if errors}} {{password}} {{else}} "" {{/if}} >
+            </div>
+            <span class="login">
+                <input value="Login"
+                type="submit"
+                class="login-btn btn btn-primary" />
+            </span>
+        </form>
+            {{!-- <div  class="forgot-password">
+                <a href="#" class="password-link">Forgot Password</a>
+            </div> --}}
+        <div class="footer">
+            Don't Have An Account Yet? <a href="http://localhost:3000/my.diary.com/signup">Create Account</a> 
+        </div>
+    </div>
+</div>
