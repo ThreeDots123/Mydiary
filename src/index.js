@@ -1,5 +1,6 @@
 const express = require("express")
 const app = express()
+const path = require("path")
 const unauthenticated = require("../routes/unauthenticated")
 const authenticated = require("../routes/authenticated")
 const exphbs = require("express-handlebars")
@@ -10,7 +11,7 @@ const express_session = require("express-session")
 const methodOverride = require("method-override")
 
 // make public folder static
-app.use(express.static("public"))
+app.use(express.static(path.join(__dirname, "public")))
 
 // Load env files..
 require("dotenv").config( {path : "./config/config.env"} )
