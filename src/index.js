@@ -11,7 +11,7 @@ const express_session = require("express-session")
 const methodOverride = require("method-override")
 
 // make public folder static
-app.use(express.static(path.join(__dirname, "public")))
+app.use(express.static("public"))
 
 // Load env files..
 require("dotenv").config( {path : "./config/config.env"} )
