@@ -76,26 +76,30 @@ exports.getSignedUp = (req, res) => {
 exports.PostCredentials = async (req, res) => {
     const errors = []
     const {email, password} = req.body
-    if(!email.replace(/ /g, "") || !password.replace(/ /g, "")){
-        errors.push("Please, Input All Credentials")
-    }
-
-    if(errors.length > 0){
-        return res.render("signup", {errors : errors[0],
-            email,
-            password,
-            style : "signup.css",
-            title : "Sign Up"})
-    }
-    else{
-        try{
-            const user = await UserModel.create({email, password})
-            sendCookie(user, 200, res)
+        if(!email.replace(/ /g, "") || !password.replace(/ /g, "")){
+            errors.push("Please, Input All Credentials")
         }
-        catch(err){
-            console.log(err.message)
+    
+        if(errors.length > 0){
+            return res.render("signup", {errors : errors[0],
+                email,
+                password,
+                style : "signup.css",
+                title : "Sign Up"})
         }
-    }
+        else{
+            try{
+                const user = await UserModel.create({email, password})
+                sendCookie(user, 200, res)
+            }
+            catch(err){
+                return res.render("signup", {errors : "Email Already Exists",
+                    email,
+                    password,
+                    style : "signup.css",
+                    title : "Sign Up"})
+            }
+        }
 }
 
 // Method  -  Post
