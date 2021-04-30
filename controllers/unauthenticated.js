@@ -93,7 +93,7 @@ exports.PostCredentials = async (req, res) => {
                 sendCookie(user, 200, res)
             }
             catch(err){
-                return res.render("signup", {errors : "Email Already Exists",
+                return res.render("signup", {errors : err,
                     email,
                     password,
                     style : "signup.css",
