@@ -9,6 +9,9 @@ const cookie_parser = require("cookie-parser")
 const flash_msg = require("connect-flash")
 const express_session = require("express-session")
 const methodOverride = require("method-override")
+const helmet = require("helmet")
+const hpp = require("hpp")
+const xss_clean = require("xss-clean")
 
 // make public folder static
 app.use(express.static("public"))
@@ -26,6 +29,16 @@ app.use(express_session({
     secret : "Secret",
     saveUninitialized : true
 }))
+
+// security middlewares
+//  helmet
+app.use(helmet())
+
+// xss
+app.use(xss_clean())
+
+// hpp
+app.use(hpp())
 
 // use method override
 app.use(methodOverride("_request"))
